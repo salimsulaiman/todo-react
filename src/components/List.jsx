@@ -22,8 +22,8 @@ function List(props) {
     <div>
       <Box
         bg="white"
-        minW="300px"
-        maxW="700px"
+        minW="350px"
+        maxW="350px"
         p={4}
         color="gray.600"
         border="1px"
@@ -34,7 +34,13 @@ function List(props) {
         <Flex justifyContent="space-between">
           <WrapItem>
             <CheckCircleIcon w={6} h={6} mr={2} color={props.progress ? "green" : "gray"} />
-            <span>{props.todo}</span>
+            {props.progress ? (
+              <span>
+                <s>{props.todo}</s>
+              </span>
+            ) : (
+              <span>{props.todo}</span>
+            )}
           </WrapItem>
           <WrapItem>
             <EditIcon
